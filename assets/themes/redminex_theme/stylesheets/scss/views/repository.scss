@@ -1,0 +1,88 @@
+// RedmineX Theme
+// Copyright 2020 RedmineX
+// For license, see https://www.projectino.cz
+// Created by Michael Staněk
+// Created without vendor prefixes, "AutoPrefixed" by PrePros v5 (https://prepros.io)
+ 
+// Media Queries to Copy / Paste:
+ 
+// 380px
+// @include media-breakpoint-up(xxs) {}
+
+// 480px
+// @include media-breakpoint-up(xs) {}
+
+// 576px
+// @include media-breakpoint-up(sm) {}
+
+// 768px
+// @include media-breakpoint-up(md) {}
+
+// 899px
+// @include media-breakpoint-up(redmine-mobile) {}
+
+// 992px
+// @include media-breakpoint-up(lg) {}
+
+// 1200px
+// @include media-breakpoint-up(xl) {}
+
+// 1500px
+// @include media-breakpoint-up(hd) {}
+
+// 1900px
+// @include media-breakpoint-up(2k) {}
+ 
+/* ==========================================================================
+   Repository
+   ========================================================================== */
+
+#browser {
+	
+	td {
+		padding: 0.5rem 1rem;
+	}
+	
+	.icon-folder:before {
+		color: $link-color;
+	}
+	
+	.expander:before {
+		font-size: 10px;
+	}
+}
+
+tr.entry td { 
+	white-space: nowrap; 
+}
+
+tr.entry td.filename {
+	width: 30%; 
+	text-align:left;
+}
+
+tr.entry td.filename_no_report {
+	width:70%; 
+	text-align:left;
+}
+
+tr.entry td.size { 
+	text-align: right; 
+	font-size: 90%; 
+}
+
+tr.entry td.revision, tr.entry td.author { 
+	text-align: center; 
+}
+
+tr.entry td.age { 
+	text-align: right; 
+}
+
+tr.entry.file td.filename a { 
+	margin-left: 1rem; 
+}
+
+tr.entry.file td.filename_no_report a { 
+	margin-left: 1rem; 
+}

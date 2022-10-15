@@ -1,3 +1,14 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <%= labelled_form_for @project, :html => {:multipart => true} do |f| %>
 <%= render :partial => 'form', :locals => { :f => f } %>
   <div class="projectino-controls">

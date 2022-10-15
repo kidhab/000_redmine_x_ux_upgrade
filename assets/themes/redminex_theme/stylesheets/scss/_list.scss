@@ -204,6 +204,10 @@ fieldset:not(.notes_with-send) .selection {
 
 #wrapper {
 	
+	.select2-container--default .select2-selection--single .select2-selection__rendered {
+		height: auto !important;
+	}
+	
 	.select2-container {
 		width: 100% !important;
 		
@@ -240,10 +244,11 @@ fieldset:not(.notes_with-send) .selection {
 			right: 1px;
 			height: calc(100% - 2px);
 			background: $white;
-			width: 50px;
+			width: 40px;
 			padding: 0 1rem 0 0;
 			margin: 0;
 			border-radius: 0 $border-radius $border-radius 0;
+			line-height: $input-height;
 		}
 		
 		.select2-selection__arrow {

@@ -96,7 +96,10 @@ body:not(.theme-dark) {
 		.box {
 			background: $query-form-bg;
 			box-shadow: none;
-			border: 1px solid $border-color-light;
+			
+			@include media-breakpoint-up(lg) {
+				border: 1px solid $border-color-light;
+			}
 		}
 	}
 	

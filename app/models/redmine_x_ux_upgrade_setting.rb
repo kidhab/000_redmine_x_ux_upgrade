@@ -1,3 +1,12 @@
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 class RedmineXUxUpgradeSetting
   def self.show_contacts_in_new_entity_menu?
     settings[:show_contacts_in_new_entity_menu].to_i > 0

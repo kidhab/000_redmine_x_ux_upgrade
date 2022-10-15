@@ -282,6 +282,13 @@
 	}
 }
 
+.ui-datepicker {
+	
+	th, td {
+		padding: 0 !important;
+	}
+}
+
 .ui-datepicker-div {
 	display: none !important;
 	
@@ -298,5 +305,12 @@
 		background: lighten($brand-yellow, 5%) !important;
 		color: $text-color !important;
 		border-color: lighten($brand-yellow, 5%) !important;
+	}
+}
+
+.ui-tooltip {
+	
+	ul {
+		margin-left: 1rem;
 	}
 }

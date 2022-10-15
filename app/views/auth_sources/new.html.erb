@@ -1,3 +1,14 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <%= title [l(:label_auth_source_plural), auth_sources_path], "#{l(:label_auth_source_new)} (#{@auth_source.auth_method_name})" %>
 
 <%= labelled_form_for @auth_source, :as => :auth_source, :url => auth_sources_path, :html => {:id => 'auth_source_form'} do |f| %>

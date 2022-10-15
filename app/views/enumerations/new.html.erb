@@ -1,3 +1,14 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <%= title [l(@enumeration.option_name), enumerations_path], l(:label_enumeration_new) %>
 
 <%= labelled_form_for :enumeration, @enumeration, :url => enumerations_path, :html => {:multipart => true} do |f| %>

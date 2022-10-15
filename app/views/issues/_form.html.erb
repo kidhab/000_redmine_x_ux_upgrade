@@ -1,3 +1,14 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <%= labelled_fields_for :issue, @issue do |f| %>
 <%= call_hook(:view_issues_form_details_top, { :issue => @issue, :form => f }) %>
 <%= hidden_field_tag 'form_update_triggered_by', '' %>

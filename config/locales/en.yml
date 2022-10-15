@@ -1,3 +1,12 @@
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 # English strings go here for Rails i18n
 en:
   # theme.js
@@ -17,10 +26,13 @@ en:
   top_menu_hamburger_user: User
   top_menu_hamburger_activity: Activity
   show_spent_time_in_top_menu: Show time log in menu
+  show_home_page_in_top_menu: Show Redmine homepage
+  redirect_to_my_page: Redirect to My page after login
   number_of_items_in_project_menu: Number of visible items in the project menu
   remember_collapsed_issues_state: 'Remember "grouped results" collapsed state'
   color_label: Color
-  top_menu_label: Left menu
+  top_menu_label: Top menu
+  login_redirect_label: Login redirect
   project_menu_label: Project menu
   logo_image_label: Logo image
   remove_logo: Remove logo

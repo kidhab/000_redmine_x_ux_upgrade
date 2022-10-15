@@ -45,3 +45,22 @@
 		padding: 0;
 	}
 }
+
+#zen-draft {
+	
+	input[type="button"] {
+		display: inline-block;
+		width: auto;
+		
+		&:nth-child(1) {
+			@include btn;
+			@include btn-primary;
+			margin-right: 0.5rem;
+		}
+		
+		&:nth-child(1) {
+			@include btn;
+			@include btn-tetriary;
+		}
+	}
+}

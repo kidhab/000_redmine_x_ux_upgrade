@@ -366,6 +366,17 @@ tr.priority-13 {
     }
 }
 
+.controller-my.action-page {
+	
+	#content {
+		background: #fafafa;
+	}
+	
+	.mypage-box {
+		background: $white;
+	}
+}
+
 .flyout-is-active #actionbar {
 	right: calc(#{$flyout-menu-width} + 0.5rem)
 }
@@ -577,7 +588,7 @@ tr.priority-13 {
 		text-align: center;
 		position: relative;
 		margin-right: 0.5rem;
-		line-height: 13px;
+		line-height: 8px;
 		
 		@include media-breakpoint-up(redmine-mobile) {
 			display: block;
@@ -782,6 +793,10 @@ tr.priority-13 {
 	}
 }
 
+#wrapper {
+	padding-bottom: 6rem;
+}
+
 .projectino-addtitional-fields-wrap {
 	
 	.projectino-addtitional-fields {
@@ -793,8 +808,10 @@ tr.priority-13 {
 		
 		.projectino-addtitional-fields {
 			max-height: 2000px;
-			padding: 1rem;
-			margin-top: -1rem;
+			background: darken($query-form-bg, 2%);
+			border-bottom: 1px solid darken($border-color-light, 2%);
+			padding-top: 2rem;
+			padding-bottom: 3rem;
 			
 			&>.tabular {
 				background: none;
@@ -808,18 +825,22 @@ tr.priority-13 {
 	}
 	
 	#projectino-addtitional-fields-trigger {
-		@include rounded360;
+		border-radius: $border-radius $border-radius 0 0;
+		border: none;
 		margin: auto;
 	    display: block;
-	    padding: 0.25rem;
+	    padding: 0.125rem;
 	    text-align: center;
 		width: 230px;
+		background: #e4e4e4;
 		position: relative;
 		z-index: 100;
+		color: #505050;
+		bottom: -8px;
 		
 		&:hover {
 			cursor: pointer;
-			background: darken($border-color-light, 2%);
+			color: #000;
 		}
 		
 		i:before {
@@ -854,8 +875,6 @@ td.created_on {
 	}
 }
 
-
-
 #expanded-menu-items {
 	transform-origin: top center;
 }
@@ -874,6 +893,83 @@ td.created_on {
 		}
 		100% {
 		transform: scale(1)
+		}
+	}
+}
+
+.controller-issues.action-index,
+.controller-projects.action-index,
+.controller-timelog.action-index,
+.controller-gantts.action-show,
+.controller-calendars.action-show,
+.controller-easy_gantt.action-index,
+.controller-agile_versions.action-index,
+.controller-risks.action-index,
+.controller-agile_boards.action-index,
+.controller-contacts.action-index,
+.controller-deals.action-index,
+.controller-expenses.action-index,
+.controller-resource_bookings.action-index,
+.controller-easy_gantt_resources.action-index,
+.controller-easy_gantt_resources.action-index,
+.controller-redmine_x_project_templates.action-index {
+	
+	#query_form_with_buttons {
+		max-height: 0;
+		overflow: hidden;
+		
+		&.open {
+			max-height: 2000px;
+			margin: 1rem 0;
+		}
+	}
+}
+
+.controller-expenses.action-index,
+.controller-invoices.action-index,
+.controller-operations.action-index,
+.controller-dmsf.action-show {
+		
+	#query_form {
+		max-height: 0;
+		overflow: hidden;
+		
+		&.open {
+			max-height: 2000px;
+		}
+	}
+}
+
+.controller-favorite_projects.action-search {
+	
+	#query_form_with_buttons {
+		max-height: 0;
+		overflow: hidden;
+	}
+	
+	#query_form {
+		
+		p.buttons {
+			display: none;
+		}
+		
+		&.open {
+			
+			#query_form_with_buttons {
+				max-height: 2000px;
+			}
+		}
+	}
+}
+
+.controller-calendar.action-index {
+	
+	#calendar_filter {
+		max-height: 0;
+		overflow: hidden;
+		
+		&.open {
+			max-height: 2000px;
 		}
 	}
 }
@@ -912,7 +1008,6 @@ td.created_on {
     background: $white;
     display: none;
     position: absolute;
-    top: 52px;
     padding: 0.5rem !important;
     min-width: 120px;
 	
@@ -923,6 +1018,7 @@ td.created_on {
 }
 
 .projectino-controls {
+	box-sizing: border-box;
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -935,6 +1031,10 @@ td.created_on {
 	z-index: $zindex-sticky;
 	display: flex;
 	justify-content: center;
+}
+
+.projectino-controls.release {
+	position: static;
 }
 
 #update {
@@ -1000,6 +1100,14 @@ td.created_on {
 		position: relative;
 		top: 2px;
 	}
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	color: inherit;
+}
+
+#show-filters:hover {
+	cursor: pointer;
 }
 
 /*
@@ -1070,21 +1178,18 @@ body.theme-Classic {
 	.projectino-addtitional-fields-wrap {
 		
 		#projectino-addtitional-fields-trigger {
-			border: 1px solid #e4e4e4;
-			background: #dadada;
+			
+			span {
+				font-weight: 600;
+			}
 			
 			.fal {
 				display: none;
 			}
 		}
 		
-		.projectino-addtitional-fields {
-			border: 1px solid transparent;
-		}
-		
 		&.open .projectino-addtitional-fields {
-			background: #dadada;
-			border-color: #e4e4e4;
+			background: #e4e4e4;
 		}
 	}
 	
@@ -1233,7 +1338,7 @@ body.theme-Classic {
 		.projectino-logo {
 			display: block !important;
 			float: left;
-			padding: 0.75rem 1rem;
+			padding: 7px 1rem;
 			max-width: 200px;
 			
 			img {
@@ -1252,4 +1357,91 @@ body.theme-Classic {
 		    content: "\f0c9" !important;
 		}	
 	}
+}
+
+a.parent-trigger {
+	margin-right: 0.25rem;
+}
+
+#main {
+	
+	&.nosidebar {
+		
+		#sidebar,
+		#hide-sidebar {
+			display: none;
+		}
+	}	
+}
+
+#sidebar {
+	flex: 0 0 260px;
+	min-width: 0px;
+	position: relative;
+	padding: 0 2rem 3rem 4rem;
+	margin-left: auto;
+	
+	@include media-breakpoint-up(xl) {
+		flex: 0 0 320px;
+	}
+	
+	&.d-none {
+		flex: 0 0 0px !important;
+		padding: 0;
+		
+		&>*:not(#hide-sidebar) {
+			display: none;
+		}
+	}
+}
+
+#hide-sidebar {
+	-webkit-transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	border-radius: 4px 0 0 4px;
+	position: fixed;
+	right: -5px;
+	top: 50%;
+	padding: 7px;
+	display: none;
+	width: 16px;
+	height: 16px;
+	z-index: 1020;
+	background: #628DB6;
+	color: #fff;
+}
+
+@media only screen and (min-width: 900px) {
+	#hide-sidebar {
+		display: block;
+	}
+}
+
+.settings-rx-gantt-default fieldset {
+	border: none;
+	padding: 0.125rem 0;
+}
+
+#add_user_box {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 0.5rem;
+}
+
+#add_user_box>a {
+	margin-bottom: 6px;
+	margin-left: 0.5rem;
+}
+
+.select2-dropdown {
+	min-width: 120px !important;
+}
+
+.select2-selection__clear {
+	margin-right: 8px !important;
+}
+
+.block-receiver {
+    border: 1px dashed #fafafa;
 }

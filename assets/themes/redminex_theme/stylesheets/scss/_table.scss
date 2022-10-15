@@ -72,6 +72,7 @@
 table {
 	display: table;
 	border-collapse: collapse;
+	width: calc(100% - 2px);
 	
 	&.filecontent th.filename,
 	&.filecontent th.line-num {
@@ -96,35 +97,23 @@ table {
 		border-bottom: 1px solid $border-color-light;
 	}
 	
-	&:not(.gantt-table):not(.cal):not(.ui-datepicker-calendar):not(.table-generator):not(.filecontent):not(.progress) {
-		width: calc(100% - 2px);
+	&.plugins {
 		
-		th, td {
-			padding: 0;
-			
-			&:not(:empty) {
-				padding: 0.875rem;
-			}
+		td.name {
+			padding-left: 2rem;
 		}
+	}
+	
+	&.list {
 		
-		&.plugins {
+		thead,
+		tbody {
 			
-			td.name {
-				padding-left: 2rem;
-			}
-		}
-		
-		&.list {
-			
-			thead,
-			tbody {
-				
-				&>th, 
-				&>td {
-		
-					&:first-child {
-						padding-left: 2rem;
-					}
+			&>th, 
+			&>td {
+	
+				&:first-child {
+					padding-left: 2rem;
 				}
 			}
 		}
@@ -144,6 +133,11 @@ table {
 	th, td {
 		vertical-align: middle;
 		text-align: left;
+		padding: 0;
+			
+		&:not(:empty) {
+			padding: 0.875rem;
+		}
 	}
 	
 	td.last_notes {
@@ -349,10 +343,9 @@ div:not(.issue.details) table.list.issues {
 		
 		td:not(.buttons):not(.last_notes):not(.id) {
 			
-			&>*{
+			&~*{
 				white-space: nowrap;
 				overflow: hidden;
-				width: 100%;
 				max-width: 500px;
 				text-overflow: ellipsis;
 			}
@@ -459,7 +452,7 @@ td.values>span {
 	}
 	
 	&.box table {
-		width: auto;
+		width: auto !important;
 		
 		td {
 			padding: 0.25rem !important;
@@ -577,7 +570,7 @@ tr.project {
         padding-left: 10rem !important;
     }
 
-    .idnt-6 td.name {
+    &.idnt-6 td.name {
         padding-left: 12rem !important;
     }
 
@@ -595,40 +588,47 @@ tr.project {
 }
 
 tr.issue {
+ 	
+ 	&[class*="idnt-"] td.subject:before {
+ 		content: '·';
+ 		margin-right: 0.5rem;
+ 		color: $fa-font-color;
+ 		font-weight: 600;
+ 	}
 
     &.idnt-1 td.subject {
-        padding-left: 1rem !important;
-    }
-
-    &.idnt-2 td.subject {
         padding-left: 2rem !important;
     }
 
-    &.idnt-3 td.subject {
+    &.idnt-2 td.subject {
         padding-left: 3rem !important;
     }
 
-    &.idnt-4 td.subject {
+    &.idnt-3 td.subject {
         padding-left: 4rem !important;
     }
 
-    &.idnt-5 td.subject {
+    &.idnt-4 td.subject {
         padding-left: 5rem !important;
     }
 
-    &.idnt-6 td.subject {
+    &.idnt-5 td.subject {
         padding-left: 6rem !important;
     }
 
-    &.idnt-7 td.subject {
+    &.idnt-6 td.subject {
         padding-left: 7rem !important;
     }
 
+    &.idnt-7 td.subject {
+        padding-left: 8rem !important;
+    }
+
     &.idnt-8 td.subject {
-        padding-left: 5rem !important;
+        padding-left: 9rem !important;
     }
 
     &.idnt-9 td.subject {
-        padding-left: 8rem !important;
+        padding-left: 10rem !important;
     }
 }

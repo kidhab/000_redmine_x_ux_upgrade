@@ -113,7 +113,7 @@
 	flex: 0 0 100%;
 	max-width: 100%;
 	
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		flex: 0 0 50%;
 		max-width: 50%;
 		float: left;
@@ -123,14 +123,14 @@
 
 .splitcontentleft {
 	
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		padding: 0 0.75rem 0 0;
 	}
 }
 
 .splitcontentright {
 	
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		padding: 0 0 0 0.75rem;
 	}
 }

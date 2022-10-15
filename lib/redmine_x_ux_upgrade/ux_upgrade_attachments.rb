@@ -1,3 +1,12 @@
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 module RedmineXUxUpgrade
   module UxUpgradeAttachments
     LOGO_NAME           = 'logo'
@@ -30,6 +39,7 @@ module RedmineXUxUpgrade
     # @return nil - nothing is returned
     def self.copy_plugin_images_after_restart
       settings = Setting.find_by(name: 'plugin_000_redmine_x_ux_upgrade')
+      return unless settings
 
       copy_new_plugin_image(LOGIN_DESKTOP_NAME, settings)
       copy_new_plugin_image(LOGIN_MOBILE_NAME, settings)

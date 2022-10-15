@@ -51,7 +51,8 @@ fieldset.collapsible legend {
 }
 
 a[class*="icon"],
-a.logo-change {
+a.logo-change, 
+a.additional-tags {
 	color: $fa-font-color;
 	
 	&:hover {
@@ -362,6 +363,10 @@ th.checkbox {
 
 .icon-settings:before {
 	content: fa-content($fa-var-cog);
+}
+
+.icon-help:before {
+	content: fa-content($fa-var-info);
 }
 
 .icon-group, 
@@ -1241,11 +1246,14 @@ table.list .overdue {
 	background: none !important;
 }
 
-.ui-state-default .ui-icon-closethick:before {
-	@include icon;
+.ui-button .ui-icon-closethick {
+	background: none;
 	
-	content: fa-content($fa-var-times);
-	margin: 0;
+	&:before {
+		@include icon;
+		content: fa-content($fa-var-times);
+		margin: 0;
+	}
 }
 
 .icon-email-to {
@@ -1253,7 +1261,6 @@ table.list .overdue {
 	
 	&:before {
 		@include icon;
-		
 		content: fa-content($fa-var-envelope);
 	}
 }

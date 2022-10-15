@@ -117,7 +117,7 @@ fieldset+fieldset {
 	max-width: 95% !important;
 }
 
-input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not(.filename):not(.attachments_fields .description),
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not(.filename):not(.attachments_fields .description):not(.attachments input),
 select {
 	
 	@include media-breakpoint-up(sm) {
@@ -146,6 +146,14 @@ input[type="file"] {
     text-overflow: ellipsis;
     overflow: hidden;
     width: auto;
+}
+
+.tabular {
+	
+	input[type=checkbox],
+	input[type=radio] {
+		width: auto !important;
+	}
 }
 
 textarea {
@@ -333,9 +341,4 @@ input[type="submit"]+input[type="submit"] {
 
 #project_is_public+em.info {
 	display: inline-block !important; 
-}
-
-.check_box_group {
-	padding-top: 0.375rem;
-	display: block;
 }

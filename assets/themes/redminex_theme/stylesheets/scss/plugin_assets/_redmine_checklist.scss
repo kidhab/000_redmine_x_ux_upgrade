@@ -132,3 +132,24 @@ span.checklist-edit-box input {
 		display: none !important;
 	}
 }
+
+#checklist_form {
+	
+	@include media-breakpoint-up(lg) {
+		max-width: 50%;
+	}
+}
+
+.new_issue {
+	
+	#checklist_form {
+	
+		@include media-breakpoint-up(sm) {
+			margin-left: 1rem;
+		}
+		
+		@include media-breakpoint-up(lg) {
+			max-width: 50%;
+		}
+	}
+}

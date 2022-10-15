@@ -121,6 +121,10 @@
 		@include media-breakpoint-up(2k) {
 			padding: 2px 16px;
 		}
+		
+		&:not(#btn-settings) {
+			margin-bottom: 4px !important;
+		}
 	}
 	
 	.gantt_btn_set.gantt_save_btn_set, 
@@ -166,8 +170,17 @@
 		margin: 0 -1.5rem 1rem -1.5rem;
 	}
 	
+	#query_form_modal .tabular {
+		border: none !important;
+	}
+	
 	#query_form_modal > .box {
 		margin-bottom: 1rem;
+	}
+	
+	#save-query-modal-gantt-btn, 
+	#cancel-query-modal-gantt-btn {
+		align-self: center;
 	}
 	
 	#save-query-modal-gantt-btn {
@@ -195,4 +208,8 @@
 		border: none !important;
 		padding: 0 !important;
 	}	
+}
+
+.gantt-right .gantt-settings-group {
+	margin-bottom: 4px !important;
 }

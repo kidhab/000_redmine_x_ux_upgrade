@@ -1,4 +1,12 @@
-# English strings go here for Rails i18n
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 cs:
   # theme.js
   theme_js:
@@ -17,10 +25,13 @@ cs:
   top_menu_hamburger_user: Uživatel
   top_menu_hamburger_activity: Aktivity
   show_spent_time_in_top_menu: Zobrazit odpracovaný čas v menu
+  show_home_page_in_top_menu: Zobrazit domovskou stránku Redmine
+  redirect_to_my_page: Přesměrovat po přihlášení na Mojí stránku
   number_of_items_in_project_menu: Počet viditelných položek v projektovém menu
   remember_collapsed_issues_state: 'Pamatovat si sbalený stav u "seskupených výsledků"'
   color_label: Barva
   top_menu_label: Levé menu
+  login_redirect_label: Přesměrování po přihlášení
   project_menu_label: Projektové menu
   logo_image_label: Logo
   remove_logo: Odstranit logo
@@ -100,5 +111,4 @@ cs:
 
   # My page blocks
   my_open_close_icon_button: 'Otevřít/Uzavřít'
-
 

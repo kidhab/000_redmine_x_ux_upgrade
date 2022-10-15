@@ -285,4 +285,25 @@
 			background: $link-color;
 		} 
 	}
+	
+	#dark {
+		position: absolute;
+		top: 0.875rem;
+		right: 4rem;
+		
+		@include media-breakpoint-up(xl) {
+			right: 29rem;
+		}
+		
+		a {
+			font-size: 0;
+			
+			&:before {
+				content: fa-content($fa-var-moon);
+				font-family: "Font Awesome 5 Pro";
+				font-size: 14px;
+				color: $fa-font-color;
+			}
+		}
+	}
 }

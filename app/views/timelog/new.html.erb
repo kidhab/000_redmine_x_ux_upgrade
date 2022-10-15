@@ -1,3 +1,14 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <h2><%= l(:label_spent_time) %></h2>
 
 <%= labelled_form_for @time_entry, :url => time_entries_path, :html => {:multipart => true} do |f| %>

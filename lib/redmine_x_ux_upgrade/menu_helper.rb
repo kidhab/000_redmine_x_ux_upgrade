@@ -1,3 +1,12 @@
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 module RedmineXUxUpgrade
   module MenuHelper
     # Registers all UX Upgrade menu items for all new menus
@@ -45,6 +54,7 @@ module RedmineXUxUpgrade
     # @return [nil] - nothing is returned
     def projectino_top_menu
       Redmine::MenuManager.map :projectino_top_menu do |menu|
+        menu.push :home, { :controller => 'welcome', :action => 'index' }, if: Proc.new { Setting.plugin_000_redmine_x_ux_upgrade[:show_home_page_in_top_menu] }
         menu.push :my_page, { :controller => 'my', :action => 'page' }, :if => Proc.new { User.current.logged? }
         menu.push :projects, { :controller => 'projects', :action => 'index' }, :caption => :label_project_plural
         menu.push :issues, { :controller => 'issues', :action => 'index' }, :caption => :label_issue_plural

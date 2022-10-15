@@ -1,10 +1,41 @@
+<%#
+  This file is a part of RedmineX UX Upgrade plugin
+  for Redmine
+
+  Copyright 2020-2022 RedmineX. All Rights Reserved.
+  https://www.redmine-x.com
+
+  Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+  Created by Ondřej Svejkovský
+%>
+
 <fieldset class="box tabular">
   <legend><%= l(:top_menu_label) %></legend>
   <p>
-    <label><%= l(:show_spent_time_in_top_menu) %></label>
-    <span id="watchers_inputs">
+    <label for="settings_show_spent_time_in_top_menu"><%= l(:show_spent_time_in_top_menu) %></label>
+    <span>
       <span class="floating" style="margin-left: 0px;">
       <%= check_box_tag 'settings[show_spent_time_in_top_menu]', 1, @settings[:show_spent_time_in_top_menu] %>
+      </span>
+    </span>
+  </p>
+  <p>
+    <label for="settings_show_home_page_in_top_menu"><%= l(:show_home_page_in_top_menu) %></label>
+    <span>
+      <span class="floating" style="margin-left: 0px;">
+      <%= check_box_tag 'settings[show_home_page_in_top_menu]', 1, @settings[:show_home_page_in_top_menu] %>
+      </span>
+    </span>
+  </p>
+</fieldset>
+
+<fieldset class="box tabular">
+  <legend><%= l(:login_redirect_label) %></legend>
+  <p>
+    <label for="settings_redirect_to_my_page"><%= l(:redirect_to_my_page) %></label>
+    <span>
+      <span class="floating" style="margin-left: 0px;">
+      <%= check_box_tag 'settings[redirect_to_my_page]', 1, @settings[:redirect_to_my_page] %>
       </span>
     </span>
   </p>
@@ -13,8 +44,8 @@
 <fieldset class="box tabular">
   <legend><%= l(:project_menu_label) %></legend>
   <p>
-    <label><%= l(:number_of_items_in_project_menu) %></label>
-    <span id="watchers_inputs">
+    <label for="settings_number_of_items_in_project_menu"><%= l(:number_of_items_in_project_menu) %></label>
+    <span>
       <span class="floating" style="margin-left: 0px;">
       <%= number_field_tag 'settings[number_of_items_in_project_menu]', RedmineXUxUpgradeSetting.number_of_items_in_project_menu, :min => 1 %>
       </span>
@@ -25,8 +56,8 @@
 <fieldset class="box tabular">
   <legend><%= l(:label_issue_plural) %></legend>
   <p>
-    <label><%= l(:remember_collapsed_issues_state) %></label>
-    <span id="watchers_inputs">
+    <label for="settings_remember_collapsed_issues_state"><%= l(:remember_collapsed_issues_state) %></label>
+    <span>
       <span class="floating" style="margin-left: 0px;">
       <%= check_box_tag 'settings[remember_collapsed_issues_state]', 1, @settings[:remember_collapsed_issues_state] %>
       </span>
@@ -67,3 +98,4 @@
     <%= link_to l(:remove_login), delete_attachment_path(@projectino_settings, name: 'login'), method: :post%>
   </p>
 </fieldset>
+<%= hidden_field_tag('settings[version]', Redmine::Plugin.find('000_redmine_x_ux_upgrade').version.delete('.').to_i) %>

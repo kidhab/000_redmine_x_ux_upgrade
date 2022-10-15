@@ -385,14 +385,6 @@ tr.priority-13 {
     }
 }
 
-.check_box_group label {
-	display: block;
-}
-
-#attributes .check_box_group {
-	column-count: 2;
-}
-
 .query-totals {
 	margin: 0 !important;
 	font-size: $font-size-sm2;
@@ -535,15 +527,6 @@ a.issue.closed:visited {
             @include btn;
             @include btn-primary;
         }
-		
-		#issue_description_edit:not(.edit-open) {
-			
-			@include media-breakpoint-up(xl) {
-				top: -35px;
-				position: relative;
-				max-width: 400px;
-			}
-		}
     }
 
 
@@ -952,6 +935,33 @@ div.issue {
 			z-index: 100;
 		}
     }
+	
+	.other-attachments {
+		display: none;
+		
+		&.open {
+			display: table-row-group;
+		}
+	}
+	
+	.attachments-btn-box {
+		column-span: all;
+		text-align: center !important;
+	}
+	
+	.attachments-btn {
+		color: $link-color;
+		background: none;
+		border: none;
+		
+		&:after {
+			@extend %fa-icon;
+			@extend .fal;
+			content: fa-content($fa-var-long-arrow-right);
+			margin-left: 0.5rem;
+		
+		}
+	}
 
     #hide-sidebar {
         z-index: 99;
@@ -1002,6 +1012,11 @@ div.issue {
  * Attachments
  */
 
+
+.controller-attachments .attachments-btn {
+	display: none !important;
+}
+
 #existing-attachments {
 	border: 1px solid $border-color-light;
 	padding: 1rem 1rem 0 1rem;
@@ -1019,33 +1034,6 @@ div.issue {
 		min-width: 334px;
 	}
 } 
-
-.other-attachments {
-	display: none;
-	
-	&.open {
-		display: table-row-group;
-	}
-}
-
-.attachments-btn-box {
-	column-span: all;
-	text-align: center !important;
-}
-
-.attachments-btn {
-	color: $link-color;
-	background: none;
-	border: none;
-	
-	&:after {
-		@extend %fa-icon;
-		@extend .fal;
-		content: fa-content($fa-var-long-arrow-right);
-		margin-left: 0.5rem;
-	
-	}
-}
 
 .attachments {
 

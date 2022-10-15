@@ -1,0 +1,76 @@
+// RedmineX Theme
+// Copyright 2020 RedmineX
+// For license, see https://www.redmine-x.com
+// Created by Michael Staněk
+// Created without vendor prefixes, "AutoPrefixed" by PrePros v5 (https://prepros.io)
+ 
+// Media Queries to Copy / Paste:
+ 
+// 380px
+// @include media-breakpoint-up(xxs) {}
+
+// 480px
+// @include media-breakpoint-up(xs) {}
+
+// 576px
+// @include media-breakpoint-up(sm) {}
+
+// 768px
+// @include media-breakpoint-up(md) {}
+
+// 899px
+// @include media-breakpoint-up(redmine-mobile) {}
+
+// 992px
+// @include media-breakpoint-up(lg) {}
+
+// 1200px
+// @include media-breakpoint-up(xl) {}
+
+// 1500px
+// @include media-breakpoint-up(hd) {}
+
+// 1900px
+// @include media-breakpoint-up(2k) {}
+
+/* ==========================================================================
+   RedmineX Issue List
+   ========================================================================== */
+
+.redmine_x_issue_list,
+.controller-my {
+	
+	[id*="treetable-board"] {
+		
+		.webix_ss_header {
+			background: $white;
+			padding-top: 0.5rem;
+			border-bottom: 1px solid $border-color-light;
+			
+			a {
+				color: $text-color;
+				
+				&:hover {
+					color: $link-color;
+				}
+			}
+		}
+		
+		.webix_hcolumn:first-child .webix_first {
+			margin-left: 3px;
+		}
+				
+		a:not(span[data-update="subject"] a) {
+			color: $text-color;
+		}
+	}	
+	
+	.webix_view div.issue img.gravatar {
+		margin-bottom: -8px;
+	}
+	
+	[id*="fast-search-btn"] {
+		@include btn;
+		@include btn-tetriary;
+	}
+}

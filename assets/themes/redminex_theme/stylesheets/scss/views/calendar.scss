@@ -37,11 +37,11 @@
    Calendar
    ========================================================================== */
 
-.controller-calendars {
+table.cal {
+	width: 100%;
+}
 	
-	table.cal {
-		width: 100%;
-	}
+.controller-calendars {
 	
     #month {
         max-width: 120px;

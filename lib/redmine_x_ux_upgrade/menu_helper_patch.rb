@@ -1,3 +1,12 @@
+# This file is a part of RedmineX UX Upgrade plugin
+# for Redmine
+#
+# Copyright 2020-2022 RedmineX. All Rights Reserved.
+# https://www.redmine-x.com
+#
+# Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+# Created by Ondřej Svejkovský
+
 module RedmineXUxUpgrade
   module MenuHelperPatch
     module InstanceMethods
@@ -74,7 +83,9 @@ module RedmineXUxUpgrade
         caption = item.caption(project)
 
         # fix for correct top menu highlighting
-        if current_menu_item == :my
+        if current_menu_item == :welcome
+          selected = item.name == :home
+        elsif current_menu_item == :my
           selected = item.name == :my_page
         else
           selected = (current_menu_item == item.name)

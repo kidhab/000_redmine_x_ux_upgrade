@@ -172,7 +172,6 @@ body:not([class*="project-"]).action-login #content {
 		}
 		
 		@include media-breakpoint-up(xl) {
-			max-width: 300px;
 			margin: 0 auto 3rem auto;
 		}
 	}

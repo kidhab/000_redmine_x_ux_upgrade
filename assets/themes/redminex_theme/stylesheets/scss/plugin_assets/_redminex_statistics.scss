@@ -65,8 +65,8 @@
 	padding: 1rem !important;
 }
 
-.chart-navbar-icons {
-	min-width: 80px;
+.grid-stack-item .chart-navbar-icons {
+	min-width: 115px;
 }
 
 .custom-chart-btn {
@@ -87,6 +87,7 @@
 
 .add-menus .drdn-content {
 	top: 34px !important;
+	min-width: fit-content;
 }
 
 .chart-navbar-title {

@@ -86,7 +86,7 @@ module RedmineXUxUpgrade
       Redmine::MenuManager.map :projectino_project_menu do |menu|
         menu.push :new_object, nil, :caption => ' + ',
                   :if => Proc.new { |p| Setting.new_item_menu_tab == '2' },
-                  :html => { :id => 'new-object', :onclick => 'window.RXU.menu.toggleNewObjectDropdown(); return false;' }
+                  :html => { :id => 'new-object', :onclick => 'window.RXU.Menu.toggleNewObjectDropdown(); return false;' }
         menu.push :new_issue_sub,
                   { :controller => 'issues', :action => 'new', :copy_from => nil },
                   :param => :project_id, :caption => :label_issue_new,

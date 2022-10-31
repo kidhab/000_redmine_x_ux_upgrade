@@ -18,8 +18,8 @@ module RedmineXUxUpgrade
 
 
     # Saves files (logo + login images) on the ux upgrade settings page
-    # @param {Object} params - params object (from settings controller plugin action)
-    # @return {} - nothing is returned
+    # @param [Object] params - params object (from settings controller plugin action)
+    # @return [nil] - nothing is returned
     def self.save_settings_attachments(params)
       settings = Setting.find_by(name: 'plugin_000_redmine_x_ux_upgrade')
 
@@ -36,7 +36,7 @@ module RedmineXUxUpgrade
 
     # Copy login images to the ux upgrade images folder after server is restarted (Redmine
     # rewrites redmine x theme directory in public folder after restart)
-    # @return nil - nothing is returned
+    # @return [nil] - nothing is returned
     def self.copy_plugin_images_after_restart
       settings = Setting.find_by(name: 'plugin_000_redmine_x_ux_upgrade')
       return unless settings
@@ -46,8 +46,8 @@ module RedmineXUxUpgrade
     end
 
     # Delete files (logo or login images) on the ux upgrade settings page
-    # @param {Object} params - params object (from settings controller plugin action)
-    # @return {} - nothing is returned
+    # @param [Object] params - params object (from settings controller plugin action)
+    # @return [nil] - nothing is returned
     def self.delete_settings_attachments(params)
       return unless params[:name] && params[:format]
 
@@ -62,9 +62,9 @@ module RedmineXUxUpgrade
     private
 
     # Checks if params contain at least one attachment of given type (by name)
-    # @param {Object} params - params object (from settings controller plugin action)
-    # @param {String} name - type of the attachment (logo or login image)
-    # @return {Boolean} - true if at least one attachment is present
+    # @param [Object] params - params object (from settings controller plugin action)
+    # @param [String] name - type of the attachment (logo or login image)
+    # @return [Boolean] - true if at least one attachment is present
     def self.any_attachment?(params, name)
       return false unless params[name.to_sym]
 
@@ -74,8 +74,8 @@ module RedmineXUxUpgrade
     end
 
     # Deltes Ux Upgrade logo image file and its record in the Attachments table
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {Boolean} - true if settings were updated succesfully
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [Boolean] - true if settings were updated succesfully
     def self.delete_logo(settings)
       delete_old_plugin_image(LOGO_NAME, settings)
       Attachment.where(container_id: settings.id, description: LOGO_NAME).delete_all
@@ -83,8 +83,8 @@ module RedmineXUxUpgrade
     end
 
     # Deltes Ux Upgrade login image files and their records in the Attachments table
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {Boolean} - true if settings were updated succesfully
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [Boolean] - true if settings were updated succesfully
     def self.delete_login(settings)
       delete_old_plugin_image(LOGIN_DESKTOP_NAME, settings)
       delete_old_plugin_image(LOGIN_MOBILE_NAME, settings)
@@ -96,10 +96,10 @@ module RedmineXUxUpgrade
     end
 
     # Save ux upgrade plugin logo or login image (delete old image, save new image, copy it to the theme)
-    # @param {String} name - type of the attachment (logo or login image)
-    # @param {Object} attachment - attachment params object (from settings controller plugin action)
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {} - nothing is returned
+    # @param [String] name - type of the attachment (logo or login image)
+    # @param [Object] attachment - attachment params object (from settings controller plugin action)
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [nil] - nothing is returned
     def self.save_plugin_image(name, attachment, settings)
       delete_old_plugin_image(name, settings) if name == LOGO_NAME
       save_attachment(name, attachment, settings)
@@ -107,10 +107,10 @@ module RedmineXUxUpgrade
     end
 
     # Saves Ux Upgrade logo or login image file as and attachment to the Attachments table
-    # @param {String} name - type of the attachment (logo or login image)
-    # @param {Object} attachment - attachment params object (from settings controller plugin action)
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {Boolean} - true if attachment (linked to the settings) was saved succesfully
+    # @param [String] name - type of the attachment (logo or login image)
+    # @param [Object] attachment - attachment params object (from settings controller plugin action)
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [Boolean] - true if attachment (linked to the settings) was saved succesfully
     def self.save_attachment(name, attachment, settings)
       Attachment.where(container_id: settings.id, description: name).delete_all
       attachment[attachment.keys.first][:description] = name
@@ -120,9 +120,9 @@ module RedmineXUxUpgrade
     end
 
     # Copies new image file to the ux upgrade images folder
-    # @param {String} name - type of the attachment (logo or login image)
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {} - nothing is returned
+    # @param [String] name - type of the attachment (logo or login image)
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [nil] - nothing is returned
     def self.copy_new_plugin_image(name, settings)
       new_attachment = Attachment.where(container_id: settings.id, description: name).last
       if new_attachment
@@ -133,9 +133,9 @@ module RedmineXUxUpgrade
     end
 
     # Deletes old image file in the ux upgrade images folder (or replaces it by the default one)
-    # @param {String} name - type of the attachment (logo or login image)
-    # @param {Object} settings - UX Upgrade plugin settings ActiveRecord object
-    # @return {} - nothing is returned
+    # @param [String] name - type of the attachment (logo or login image)
+    # @param [Object] settings - UX Upgrade plugin settings ActiveRecord object
+    # @return [nil] - nothing is returned
     def self.delete_old_plugin_image(name, settings)
       old_attachment = Attachment.where(container_id: settings.id, description: name).last
       return unless old_attachment
@@ -149,9 +149,9 @@ module RedmineXUxUpgrade
     end
 
     # Builds path to corresponding file in rx theme images folder
-    # @param {String} name - type of the attachment (logo or login image)
-    # @param {String or nil} filename - name of the filename of the logo file
-    # @return {String} - path to file corresponding to the given name
+    # @param [String] name - type of the attachment (logo or login image)
+    # @param [String | nil] filename - name of the filename of the logo file
+    # @return [String] - path to file corresponding to the given name
     def self.image_path(name, filename=nil)
       if name == LOGO_NAME && filename
         File.join(Rails.root, 'public', 'themes', 'redminex_theme', 'images', filename)
@@ -165,8 +165,8 @@ module RedmineXUxUpgrade
     end
 
     # Builds path to corresponding default login image file in rx theme images/default_login folder
-    # @param {String} name - type of the login attachment (login desktop or mobile image)
-    # @return {String} - path to default image file corresponding to the given name
+    # @param [String] name - type of the login attachment (login desktop or mobile image)
+    # @return [String] - path to default image file corresponding to the given name
     def self.default_image_path(name)
       if name == LOGIN_DESKTOP_NAME
         File.join(Rails.root, 'public', 'themes', 'redminex_theme', 'images', 'default_login', LOGIN_DESKTOP_FILE)

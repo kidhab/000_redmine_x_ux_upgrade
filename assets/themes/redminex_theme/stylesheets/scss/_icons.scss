@@ -365,6 +365,10 @@ th.checkbox {
 	content: fa-content($fa-var-cog);
 }
 
+.icon-people:before {
+	content: fa-content($fa-var-users);
+}
+
 .icon-help:before {
 	content: fa-content($fa-var-info);
 }

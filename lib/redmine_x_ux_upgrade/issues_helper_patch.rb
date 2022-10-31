@@ -45,7 +45,7 @@ module RedmineXUxUpgrade
                 "".html_safe
               end
             # Change - this method from application helper patch adds edit button to the buttons html
-            buttons << link_to_context_menu_with_edit(issue)
+            buttons << link_to_context_menu_with_edit(child)
             s <<
               content_tag(
                 'tr',

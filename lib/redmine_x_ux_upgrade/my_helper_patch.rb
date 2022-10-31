@@ -29,7 +29,7 @@ module RedmineXUxUpgrade
 
             # new 'open/collapse' icon
             collapse =
-              content_tag('span', '', :class => 'icon-collapse', :title => l(:my_open_close_icon_button), 'data-user': User.current.id,  onclick: "window.RXU.myPage.myPageBlockToggle(this);" ) do
+              content_tag('span', '', :class => 'icon-collapse', :title => l(:my_open_close_icon_button), 'data-user': User.current.id,  onclick: "window.RXU.MyPage.myPageBlockToggle(this);" ) do
                 content_tag('i', '', :class => 'fal fa fa-chevron-up')
               end
 

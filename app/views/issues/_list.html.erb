@@ -41,10 +41,10 @@
       <td colspan="<%= query.inline_columns.size + 2 %>">
         <%# Toggle functions are replaced by projectino versions, which enable to save state of the boxes 
             - see standard_theme.js %>
-        <span class="expander icon icon-expended issue-group" id="<%= group_object_id %>" data-user="<%= User.current.id %>" onclick="window.RXU.issues.toggleRowGroupProjectino(this);">&nbsp;</span>
+        <span class="expander icon icon-expended issue-group" id="<%= group_object_id %>" data-user="<%= User.current.id %>" onclick="window.RXU.Issues.toggleRowGroupProjectino(this);">&nbsp;</span>
         <span class="name"><%= group_name %></span> <span class="badge badge-count count"><%= group_count %></span> <span class="totals"><%= group_totals %></span>
         <%= link_to_function("#{l(:button_collapse_all)}/#{l(:button_expand_all)}",
-                             "window.RXU.issues.toggleAllRowGroupsProjectino(this)", :class => 'toggle-all', :'data-user' => User.current.id) %>
+                             "window.RXU.Issues.toggleAllRowGroupsProjectino(this)", :class => 'toggle-all', :'data-user' => User.current.id) %>
       </td>
     </tr>
   <% end %>

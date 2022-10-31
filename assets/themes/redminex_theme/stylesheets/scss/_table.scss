@@ -353,7 +353,7 @@ div:not(.issue.details) table.list.issues {
 	}
 }
 
-div.issue.details #issue_tree table.list.issues tr td > * {
+div.issue.details #issue_tree table.list.issues tr td > *:not(table) {
 	white-space: normal;
 	overflow: visible;
 	width: auto;

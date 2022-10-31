@@ -210,7 +210,7 @@ a.wiki-anchor {
 }
 
 code, kbd, samp {
-	white-space: normal;
+	white-space: pre;
     word-break: break-word;
 }
 
@@ -218,8 +218,7 @@ code, kbd, samp, pre {
 	font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 	padding: 0.125rem;
 	background-color: $pre-bg;
-	display: block;
-	margin: 1rem 0;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 pre {

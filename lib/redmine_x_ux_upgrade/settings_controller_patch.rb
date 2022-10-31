@@ -28,10 +28,12 @@ module RedmineXUxUpgrade
 
         if request.post?
           setting = params[:settings] ? params[:settings].permit!.to_h : {}
+          Setting.send "plugin_#{@plugin.id}=", setting
+
           if params[:id] == "000_redmine_x_ux_upgrade"
             RedmineXUxUpgrade::UxUpgradeAttachments.save_settings_attachments(params)
           end
-          Setting.send "plugin_#{@plugin.id}=", setting
+
           flash[:notice] = l(:notice_successful_update)
           redirect_to plugin_settings_path(@plugin)
         else

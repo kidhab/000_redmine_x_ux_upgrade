@@ -11,7 +11,7 @@ Redmine::Plugin.register :'000_redmine_x_ux_upgrade' do
   name 'RedmineX UX Upgrade'
   author 'Ondřej Svejkovský'
   description 'RedmineX UX Upgrade'
-  version '1.3.5' # for Redmine v5.0.2
+  version '1.3.6' # for Redmine v5.0.3
   url 'www.redmine-x.com'
 
   settings(
@@ -21,7 +21,7 @@ Redmine::Plugin.register :'000_redmine_x_ux_upgrade' do
       remember_collapsed_issues_state: false,
       show_home_page_in_top_menu: false,
       show_spent_time_in_top_menu: false,
-      version: 135 # for Redmine v5.0.2
+      version: 136 # for Redmine v5.0.3
     },
     partial: 'settings/redmine_x_ux_upgrade_settings'
   )
